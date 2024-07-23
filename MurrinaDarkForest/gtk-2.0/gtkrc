@@ -1,0 +1,161 @@
+#	December 25th 2007 //Happy holidays Earth residents, here's a gift for you.
+#	Murrina-DarkForest: A gray based theme with deep green accents
+#	By Jonathan Westbrock <dulljon@yahoo.com>
+#
+#	Enjoy with my compliments.
+#	Author assumes no liabilities, and expresses no warranties.
+#	Redistribute or modify freely, please include the above notices.
+  style "theme-default"
+  {
+  	GtkButton      ::default_border    = { 0, 0, 0, 0 }
+  	GtkRange       ::trough_border     = 0
+  	GtkPaned       ::handle_size       = 6
+  	GtkRange       ::slider_width      = 15
+  	GtkRange       ::stepper_size      = 15
+  	GtkScrollbar   ::min_slider_length = 30
+  	GtkCheckButton ::indicator_size    = 14
+  	GtkMenuBar     ::internal-padding  = 0
+  	GtkTreeView    ::expander_size     = 14
+  	GtkExpander    ::expander_size     = 16
+  	GtkScale       ::slider-length     = 20
+  
+  	xthickness = 1
+  	ythickness = 1
+ 
+  	base[ACTIVE]     	= "#215D2D"
+  	base[INSENSITIVE] 	= "#324937"
+  	base[NORMAL]   		= "#112916"
+  	base[PRELIGHT]		= "#37553D"
+  	base[SELECTED]		= "#006314"
+  
+	fg[ACTIVE]       	= "#7EA886"
+  	fg[INSENSITIVE]   	= "#2F743D"
+  	fg[NORMAL]		= "#BBE8C4"
+ 	fg[PRELIGHT]     	= "#000000"
+  	fg[SELECTED]  		= "#B1CBB6"
+  
+	bg[ACTIVE]       	= "#454545"
+	bg[INSENSITIVE]   	= "#15311B"
+  	bg[NORMAL]     		= "#3D3D3D"
+  	bg[PRELIGHT]     	= "#2D5836"
+  	bg[SELECTED]  		= "#166626"
+  
+	text[ACTIVE]     	= "#A5E5B2"
+  	text[INSENSITIVE]	= "#94C99E"
+  	text[NORMAL]   		= "#97D8A4"
+  	text[PRELIGHT]   	= "#A9EDB7"
+  	text[SELECTED]		= "#6CC77F"
+  
+	engine "murrine" 
+  	{
+  		menuitemstyle = 1
+  		glazestyle = 1
+  		scrollbar_color   = "#2D5836"
+  		contrast          	= 1.0
+  		menubarstyle = 1
+  		menubaritemstyle = 1
+  		listviewheaderstyle = 1
+  		roundness = 5
+  		animation = TRUE
+  	}
+  }
+  style "theme-wide" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 2
+  }
+  style "theme-wider" = "theme-default"
+  {
+  	xthickness = 3
+  	ythickness = 3
+  }
+  style "theme-button" = "theme-wider"
+  {
+	
+  }
+  style "theme-range" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 2
+  }
+  style "theme-notebook" = "theme-wide"
+  {
+	
+  }
+  style "theme-tasklist" = "theme-default"
+  {
+  	xthickness = 5
+  	ythickness = 3
+  }
+  style "theme-menu" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 1
+  }
+  style "theme-menu-item" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 3
+  }
+  style "theme-menubar" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 2 
+  }
+  style "theme-menubar-item" = "theme-menu-item"
+  {
+	
+  }
+  style "theme-tree" = "theme-default"
+  {
+  	xthickness = 2
+  	ythickness = 2 
+  }
+  style "theme-frame-title" = "theme-default"
+  {
+	
+  }
+  style "theme-tooltips" = "theme-default"
+  {
+  	xthickness = 4
+  	ythickness = 4
+  }
+  style "theme-progressbar" = "theme-wide"
+  {
+  	xthickness = 1
+  	ythickness = 1
+  }
+  style "theme-combo" = "theme-button"
+  {
+  }
+  style "metacity-frame" = "theme-default"
+  {
+	
+  }
+  class "MetaFrames" 	  style "metacity-frame"
+  class "GtkWindow"      style "metacity-frame"
+  class "GtkWidget"      style "theme-default"
+  class "GtkButton"      style "theme-button"
+  class "GtkScale"       style "theme-range"
+  class "GtkCombo"       style "theme-button"
+  class "GtkRange"       style "theme-wide"
+  class "GtkFrame"       style "theme-wide"
+  class "GtkMenu"        style "theme-menu"
+  class "GtkEntry"       style "theme-wider"
+  class "GtkMenuItem"    style "theme-menu-item"
+  class "GtkNotebook"    style "theme-notebook"
+  class "GtkProgressBar" style "theme-progressbar"
+  class "*MenuBar*"      style "theme-menubar"
+  widget_class "*MenuItem.*" style "theme-menu-item"
+  widget_class "*MenuBar.*"  style "theme-menubar-item"
+  widget_class "*.GtkComboBox.GtkButton" style "theme-combo"
+  widget_class "*.GtkCombo.GtkButton"    style "theme-combo"
+  widget_class "*.tooltips.*.GtkToggleButton" style "theme-tasklist"
+  widget "gtk-tooltips" 		style "theme-tooltips"
+  widget_class "*.GtkTreeView.GtkButton" style "theme-tree"
+  widget_class "*.GtkCTree.GtkButton" 	style "theme-tree"
+  widget_class "*.GtkList.GtkButton" 	style "theme-tree"
+  widget_class "*.GtkCList.GtkButton" 	style "theme-tree"
+  widget_class "*.GtkFrame.GtkLabel" 	style "theme-frame-title"
+  widget_class "*.GtkNotebook.*.GtkEventBox" style "theme-notebook"
+  widget_class "*.GtkNotebook.*.GtkViewport" style "theme-notebook"

@@ -1,0 +1,510 @@
+
+  ########################################################################
+  #									 #
+  #     LUX gtk2 theme made by SzerencseFia <szerencsefia@gmail.com>	 #
+  #									 #
+  ########################################################################
+
+# Default colors
+gtk_color_scheme="fg_color:#A6A6A6\nbg_color:#242424\ntext_color:#FFFFFF\nbase_color:#8C8C8C\nselected_fg_color:#000000\nselected_bg_color:#7D99B8\ntooltip_fg_color:#D3D3D3\ntooltip_bg_color:#393939"
+
+# Icon features
+gtk-button-images = 0
+gtk-menu-popup-delay = 30
+gtk-icon-sizes ="gtk-small-toolbar=16,16:gtk-large-toolbar=24,24:gtk-button=24,24"
+
+style "lux-default"
+{
+  GtkCheckButton ::indicator-size		= 14
+  GtkCheckButton ::indicator-spacing		= 1
+  GtkButton::child-displacement-x		= 1
+  GtkButton::child-displacement-y		= 1
+  GtkButton::default-border			= { 0, 0, 0, 0 }
+  GtkCheckButton ::indicator-size		= 14
+  GtkExpander::expander_size			= 13
+  GtkMenuBar::internal-padding			= 0
+  GtkMenuItem::arrow-spacing			= 10
+  # Tabs
+  GtkNotebook::tab-curvature			= 3
+  GtkNotebook::tab-overlap			= 5
+  # Spliter area width
+  GtkPaned::handle_size				= 6
+  GtkRadioButton ::indicator-size		= 14
+  # Range sliders
+  GtkScale::trough-border			= 1  # handle frame size
+  GtkScale::slider-length			= 30 # handle vertical size
+  GtkScale::slider-width			= 11 # frame vertical size
+  # Scrollbars
+#  GtkScrollbar::has-secondary-backward-stepper	= 1
+  GtkRange::slider-width 			= 13 # scrollbars height size
+  GtkRange::stepper-size 			= 15 # scrollbar stepper size
+  GtkScrollbar::min_slider_length 		= 50
+  GtkScrollbar::has-backward-stepper 		= 1
+  GtkScrollbar::has-forward-stepper		= 1
+  GtkScrolledWindow::scrollbar-spacing  	= 1
+  GtkScrollbar::trough_border     		= 1 #0 #solves Nautilus problem with top stepper
+  # Nautilus selected icon customization
+  NautilusIconContainer::highlight_alpha	= 175
+  WnckTasklist::fade-overlay-rect		= 0
+  WnckTasklist::fade-loop-time			= 3.0 # 3 seconds
+  WnckTasklist::fade-opacity			= 0.5 # final opacity
+
+  xthickness = 1
+  ythickness = 1
+
+  fg[NORMAL]		= shade (0.975, @fg_color)
+  fg[PRELIGHT]		= @text_color
+  fg[SELECTED]		= @selected_fg_color
+  fg[ACTIVE]		= @fg_color
+  fg[INSENSITIVE]	= shade (0.7, @bg_color)
+
+  bg[NORMAL]		= @bg_color
+  bg[PRELIGHT]		= @bg_color
+  bg[SELECTED]		= @selected_bg_color
+  bg[ACTIVE]		= shade (1.35, @bg_color)
+  bg[INSENSITIVE]	= shade (1.15, @bg_color)
+
+  base[NORMAL]		= shade (0.725, @base_color)
+  base[PRELIGHT]	= @selected_bg_color
+  base[SELECTED]	= @selected_bg_color
+  base[ACTIVE]		= shade (0.875, @selected_bg_color)
+  base[INSENSITIVE]	= shade (0.925, @bg_color)
+
+  text[NORMAL]		= @text_color
+  text[PRELIGHT]	= @text_color
+  text[SELECTED]	= @selected_fg_color
+  text[ACTIVE]		= @selected_fg_color
+  text[INSENSITIVE]	= shade (0.7, @bg_color)
+
+	engine "murrine" 
+	{
+		animation           = TRUE  # FALSE = disabled, TRUE = enabled
+		colorize_scrollbar  = FALSE # FALSE = disabled, TRUE = enabled
+		contrast            = 1.2   # 0.8 for less contrast, more than 1.0 for more contrast on borders
+		glazestyle          = 3     # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
+		gradient_shades     = {1.3,1.1,0.8,1.0} # default: {1.1,1.0,1.0,1.1}
+		gradients           = TRUE  # FALSE = disabled, TRUE = enabled
+		highlight_shade     = 1.06  # set highlight amount for buttons or widgets
+		lightborder_shade   = 1.2   # sets lightborder amount for buttons or widgets
+		lightborderstyle    = 0     # 0 = lightborder on top side, 1 = lightborder on all sides
+		listviewheaderstyle = 1     # 0 = flat, 1 = glassy, 2 = raised
+		listviewstyle       = 1     # 0 = nothing, 1 = dotted
+		menubaritemstyle    = 1     # 0 = menuitem look, 1 = button look
+		menubarstyle        = 0     # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+		menuitemstyle       = 1     # 0 = flat, 1 = glassy, 2 = striped
+		menustyle           = 0     # 0 = no vertical menu stripe, 1 = display vertical menu stripe
+		reliefstyle	    = 2     # 0 = flat, 1 = inset, 2 = shadow
+		rgba		    = FALSE # FALSE = disabled, TRUE = enabled
+		roundness           = 0     # 0 = squared, 1 = old default, more will increase roundness
+		scrollbarstyle      = 3     # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes,
+					    # 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
+		sliderstyle         = 1     # 0 = nothing added, 1 = handles
+		stepperstyle        = 0     # 0 = standard, 1 = integrated stepper handles, 2 = unknown
+#		style		    = MURRINE # engine style options: CANDIDO, CLEARLOOKS, MIST, MURRINE, NODOKA
+		toolbarstyle	    = 0     # 0 = flat, 1 = glassy, 2 = gradient
+  }
+}
+
+# Default border sizes
+style "lux-wide" = "lux-default"
+{
+  xthickness = 2
+  ythickness = 2 
+}
+style "lux-wider" = "lux-default"
+{
+  xthickness = 3
+  ythickness = 3
+}
+style "lux-widest" = "lux-default"
+{
+  xthickness = 4
+  ythickness = 4
+}
+
+# Text color fixing
+style "lux-text-exception"
+{
+  text[NORMAL]	    = @selected_fg_color
+  text[PRELIGHT]    = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[ACTIVE]	    = @selected_fg_color
+  text[INSENSITIVE] = @selected_fg_color
+}
+
+# Buttons
+style "lux-button" = "lux-wider"
+{
+#  bg[NORMAL]	    = @bg_color				# buttons
+#  bg[ACTIVE]	    = shade (0.85, @bg_color)		# pressed
+  bg[PRELIGHT]	    = mix(0.8, shade (1.085, @bg_color), @selected_bg_color) # hover
+  base[NORMAL]	    = @base_color			# entry field background
+#  text[NORMAL]	    = @fg_color				# OptionMenu button-arrow
+#  text[PRELIGHT]    = shade (1.5, @fg_color)		# OptionMenu text/arrow hover
+  engine "murrine" 
+  { 
+   gradient_shades = {1.4,1.0,0.8,0.5}
+   roundness	= 2
+  }
+}
+
+# GtkCombo, GtkEntry colors
+style "lux-entry" = "lux-default"
+{
+  xthickness = 3
+  ythickness = 3
+  bg[NORMAL] 	    = shade (1.2, @bg_color)		# frame background
+  bg[PRELIGHT] 	    = shade (1.2, @bg_color)		# frame background hover
+  bg[INSENSITIVE]   = shade (0.80, @bg_color)		# diasabled frame background
+  base[NORMAL]      = @base_color			# GtkCombobox, GtkEntry entry-field background
+  base[INSENSITIVE] = shade (1.25, @bg_color)		# disabled entry-field background
+  text[NORMAL]      = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[ACTIVE]      = @selected_fg_color
+}
+
+# Tab style
+style "lux-notebook" = "lux-wider"
+{
+  fg[NORMAL] = shade (1.75, @fg_color)			# text on selected tab
+  fg[ACTIVE] = @fg_color				# text on unselected tab
+  bg[NORMAL] = shade (0.95, @bg_color)			# selected tab background
+  bg[ACTIVE] = shade (1.5, @bg_color)			# unselected tab background
+}
+
+# Pane separator
+style "lux-paned" = "lux-default"
+{
+  bg[PRELIGHT] = shade (1.15, @bg_color)		# hover
+}
+
+# Listview/Treeview
+style "lux-listview"
+{
+  base[NORMAL]      = @base_color			# Listview/Treeview background
+  text[NORMAL]	    = @selected_fg_color
+  text[PRELIGHT]    = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[ACTIVE]	    = @selected_fg_color
+  text[INSENSITIVE] = @selected_fg_color
+}
+
+# GtkCombo menu arrow
+style "lux-combo-arrow" = "lux-default"
+{
+}
+
+# Checkmark selection frames
+style "lux-check-radio-buttons" = "lux-default"
+{
+  GtkWidget::interior-focus = 0
+  GtkWidget::focus-padding  = 1
+  text[NORMAL]	    = @selected_fg_color
+  base[NORMAL]      = @base_color			# Checkmark background
+  text[SELECTED]    = shade (0.5, @bg_color)
+  text[INSENSITIVE] = shade (0.5, @bg_color)		# disabled marks
+}
+
+# Tooltips
+style "lux-tooltips" = "lux-widest"
+{
+  bg[NORMAL]   = shade (0.6, @bg_color)			# background
+  text[NORMAL] = shade (1.55, @bg_color)		# frame
+}
+
+# Menu/Listheader colors
+style "lux-menu" = "lux-default"
+{
+  xthickness = 2
+  ythickness = 2
+  bg[NORMAL]   = shade (0.9, @bg_color)			# background
+  fg[NORMAL]   = @fg_color				# menu text
+  fg[PRELIGHT] = @text_color				# menubar selected text
+}
+
+# Menu-item
+style "lux-menu-item" = "lux-menu"
+{
+  xthickness = 2
+  ythickness = 2
+  engine "pixmap"
+  {
+    image
+    {
+     function		= BOX
+     recolorable    	= TRUE
+     detail		= "menu"
+     file		= ".pixmap/menu.png"
+     border		= { 2, 2, 2, 2}
+     stretch		= TRUE
+    }
+    image
+    {
+     function		= BOX
+     recolorable	= TRUE
+     file		= ".pixmap/prelight.png"
+     border		= { 0, 0, 0, 0}
+     stretch		= TRUE
+    }
+  }
+}
+
+# Menu-item-shadow
+style "lux-menu-item-shadow"
+{
+  fg[INSENSITIVE] = shade (1.2, @bg_color)
+  engine "crux-engine" { }
+}
+
+# Menu-bar
+style "lux-menubar" = "lux-default"
+{
+  xthickness = 0
+  ythickness = 3
+  fg[NORMAL] = shade (0.975, @fg_color)			# menubar text
+  bg[NORMAL] = @bg_color				# background
+}
+
+# Toolbar
+style "lux-toolbar" = "lux-menu"
+{
+  engine "pixmap"
+  {
+    image
+    {
+     function		= BOX
+     file		= ".pixmap/toolbar.png"
+     border		= { 1, 1, 1, 1}
+     stretch		= TRUE
+    }
+  }
+}
+
+# Toolbar handlebox
+style "lux-handlebox-item" = "lux-default"
+{
+  bg[NORMAL] = @bg_color				# toolbar handle background
+}
+style "lux-handlebox" = "lux-handlebox-item"
+{
+  engine "pixmap"
+  {
+    image
+    {
+     function		= BOX
+     file		= ".pixmap/toolbar.png"
+     border		= { 1, 1, 1, 1}
+    }
+    image
+    {
+     function		= HANDLE
+     overlay_file	= ".pixmap/blank.png"
+     overlay_stretch 	= FALSE
+     orientation	= HORIZONTAL
+    }
+    image
+    {
+     function		= HANDLE
+     overlay_file	= ".pixmap/blank.png"
+     overlay_stretch	= FALSE
+     orientation	= VERTICAL
+    }
+    image
+    {
+     function		= VLINE
+     recolorable	= TRUE
+     file		= ".pixmap/blank.png"
+    }
+    image
+    {
+     function		= HLINE
+     recolorable	= TRUE
+     file		= ".pixmap/blank.png"
+    }
+  }
+}
+
+# Listview header
+style "lux-listheader" = "lux-menu"
+{
+  engine "pixmap"
+  {
+    image
+    {
+     function		= BOX
+     file		= ".pixmap/listheader.png"
+     border		= { 1, 1, 1, 1}
+     stretch		= TRUE
+    }
+  }
+}
+
+# Range slider
+style "lux-range" = "lux-default"
+{
+  fg[NORMAL]   = @selected_bg_color					# selecion frame
+  bg[NORMAL]   = shade (0.8, @bg_color)					# handle & bg_frame
+  bg[PRELIGHT] = mix(0.8, shade (1.085, @bg_color), @selected_bg_color) # handle hover
+  engine "murrine" { gradient_shades = {1.5,1.0,0.6,0.2} }
+}
+
+# Scrollbar
+style "lux-scrollbar" = "lux-default"
+{
+  xthickness = 0
+  ythickness = 0
+  bg[NORMAL]	  = mix(1.5, shade (1.15, @bg_color), @selected_fg_color)	# handle
+  engine "murrine" {
+	gradient_shades = {1.5,1.1,0.6,0.5}
+		highlight_shade     = 1.06  # set highlight amount for buttons or widgets
+		lightborder_shade   = 1.2   # sets lightborder amount for buttons or widgets
+		lightborderstyle    = 0 
+  }
+}
+
+# Progressbar
+style "lux-progressbar" = "lux-default"
+{
+  xthickness = 2
+  ythickness = 3
+  fg[PRELIGHT]   = @selected_fg_color			## text
+  bg[NORMAL]     = shade (0.8, @bg_color)		# frame
+  engine "murrine" { gradient_shades = {1.4,1.0,0.6,0.2} }
+}
+
+# Gedit harmonization
+style "lux-geditview" = "lux-default"
+{
+  bg[NORMAL]	 = @base_color				# side
+  fg[NORMAL]	 = @selected_fg_color
+  base[NORMAL]   = shade (1.5, @base_color)		# background
+  text[NORMAL]	 = @selected_fg_color			# text
+  text[SELECTED] = @selected_fg_color
+}
+
+# Menu-item separator
+style "lux-separator-menu-item"
+{
+  xthickness = 1
+  ythickness = 2
+  GtkMenuBar::shadow-type = GTK_SHADOW_NONE	
+  engine "pixmap"
+  {
+    image
+    {
+      function	  = HLINE
+      recolorable = TRUE
+      file	  = ".pixmap/separator.png"
+      border	  = { 0, 0, 0, 0}
+      stretch	  = TRUE
+    }
+  }
+}
+
+style "lux-gnome-control-center" = "lux-default"
+{
+  bg[NORMAL]	= @bg_color				# handle
+  bg[PRELIGHT]	= mix(0.8, shade (1.085, @bg_color), @selected_bg_color) # handle hover
+  fg[NORMAL]	= @selected_fg_color			# text
+  base[NORMAL]	= @base_color				# background
+}
+
+# ComboBox stuff : should stay last
+style "lux-combobox-button"
+{
+  text[NORMAL]      = shade (0.975, @fg_color)
+  text[PRELIGHT]    = shade (1.5, @fg_color)		# ComboBox buttontext hover
+  text[INSENSITIVE] = shade (0.7, @bg_color)
+}
+style "lux-combobox-menu"
+{
+  text[NORMAL]	    = @fg_color
+  text[PRELIGHT]    = @fg_color				# ComboBox/ComboBoxEntry menutext hover
+}
+style "lux-comboboxentry"
+{
+  text[NORMAL]	    = @selected_fg_color
+  text[SELECTED]    = @selected_fg_color
+  text[ACTIVE]      = @selected_fg_color
+  text[INSENSITIVE] = shade (0.7, @bg_color)
+}
+
+#|###############################
+# This section is for matches
+#
+class "GtkWidget"       style "lux-default"
+class "GtkButton"       style "lux-button"
+class "GtkScale"        style "lux-range"
+class "GtkRange"        style "lux-range"
+class "GtkPaned"        style "lux-paned"
+class "GtkMenu"         style "lux-menu"
+class "GtkEntry"        style "lux-entry"
+class "GtkMenuItem"     style "lux-menu-item"
+class "GtkNotebook"     style "lux-notebook"
+class "GtkToolbar"      style "lux-toolbar"
+class "*HandleBox*"	style "lux-handlebox"
+class "GtkMenuBar"      style "lux-menubar"
+class "GtkSeparator"    style "lux-wide"
+class "GtkArrow"        style "lux-combo-arrow"
+class "*Toolbar"	style "lux-toolbar"
+class "*MenuBar*"	style "lux-menubar"
+class "GtkScrollbar"	style "lux-scrollbar"
+class "GtkCheckButton"  style "lux-check-radio-buttons"
+
+# toolbar handlebox
+widget_class "*HandleBox"			style "lux-handlebox"
+
+# menus
+widget_class "*<GtkMenu>*"       		style "lux-menu-item"
+widget_class "*<GtkMenuItem>*"   		style "lux-menu-item"
+widget_class "*.<GtkMenuItem>.*" 		style "lux-menu-item"
+widget_class "*Toolbar"				style "lux-toolbar"
+widget_class "*MenuBar.*"			style "lux-menubar"
+
+# disabled menu-item shadow workaround
+class "*Label*"					style:highest "lux-menu-item-shadow"
+widget_class "*Label*"				style:highest "lux-menu-item-shadow"
+
+# tooltips stuff
+widget "gtk-tooltips*" 				style "lux-tooltips"
+widget "gtk-tooltip*"  				style "lux-tooltips"
+
+# tabs
+widget_class "*.GtkNotebook.*GtkEventBox" 	style "lux-notebook"
+widget_class "*.GtkNotebook.*GtkViewport"	style "lux-notebook"
+widget_class "*.GtkNotebook.GtkLabel*" 		style "lux-notebook"
+
+# treeview stuff
+widget_class "*.<GtkTreeView>.GtkButton" 	style "lux-listheader"
+widget_class "*.GtkCTree.GtkButton" 		style "lux-listheader"
+widget_class "*.GtkList.GtkButton" 		style "lux-listheader"
+widget_class "*.GtkCList.GtkButton" 		style "lux-listheader"
+widget_class "*.ETree*" 			style "lux-listheader"
+widget_class "*TreeView*" 			style "lux-listview"
+
+# arrow bg
+widget_class "*.<GtkTreeView>.GtkButton.*GtkArrow" style "lux-combo-arrow"
+widget_class "*.GtkCTree.GtkButton.*GtkArrow" 	style "lux-combo-arrow"
+widget_class "*.GtkList.GtkButton.*GtkArrow" 	style "lux-combo-arrow"
+
+# progressbar
+class "GtkProgressBar"  			style "lux-progressbar"
+widget_class "*<GtkProgressBar>"       		style "lux-progressbar"
+
+# Gedit
+widget_class "*.GeditView"			style "lux-geditview"
+
+# menu-item-separator
+widget_class "*<GtkSeparatorMenuItem>*" 	style "lux-separator-menu-item"
+
+# text exception
+widget_class "*GnomeApp*" 			style "lux-gnome-control-center"
+widget_class "*GtkDialog.GtkVBox.GtkNotebook*" 	style "lux-text-exception"
+widget_class "*Tomboy*"				style "lux-text-exception"
+widget_class "*Banshee*"			style "lux-text-exception"
+
+# Combobox stuff : should stay last
+widget "*ComboBox*" 				style "lux-combobox-button"
+widget_class "*.GtkComboBox.*"			style "lux-combobox-button"
+widget "*MenuItem*" 				style "lux-combobox-menu"
+widget_class "*GtkComboBoxEntry.*GtkEntry" 	style:highest "lux-comboboxentry"

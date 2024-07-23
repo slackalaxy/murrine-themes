@@ -1,0 +1,140 @@
+# Murreza 1.0, last updated 01/20/09.
+# Requires: Murrine engine (0.90.3+).
+
+# 0.1: Intial upload.
+# 0.2: Removed the Nocturnal sub-theme, changed some colors (scrollbars and buttons), and added an alternative version without the Rezlooks engine.
+# 0.3: Removed Rezlooks dependency (alternative version became main version).
+# 0.4: Updated some depreciated syntax.
+# 0.5: Cleaned up the code and enabled gradients for buttons.
+# 0.6: Added some comments, cleaned up the code some more, and enabled stripes in the menubar by default.
+# 0.7: Tweaked some settings and added a file to theme the XFCE panel to better match Murreza. (3rd screenshot)
+# 0.8: Changed the color of the panel (lighter), and added support for gnome's panel (can't test this).
+# 0.9: Added an alternative color scheme that's easier on the eyes.
+# 1.0: Tweaked a few settings, removed space from folder names, and made it compatible with latest Murrine GIT.
+
+include "panel.rc"
+style "theme-default"
+{
+ GtkPaned    ::handle_size      = 6
+ GtkTreeView ::expander_size    = 14
+ GtkRange    ::slider-width     = 12
+ GtkMenuBar  ::internal-padding = 0
+
+ xthickness = 3
+ ythickness = 3
+
+ fg[NORMAL]        = "#222222"
+ fg[PRELIGHT]      = "#222222"
+ fg[SELECTED]      = "#FFFFFF"
+ fg[ACTIVE]        = "#505050"
+ fg[INSENSITIVE]   = "#B5B3AC"
+
+ bg[NORMAL]        = "#EEEEEE"
+ bg[PRELIGHT]      = "#EEEEEE"
+ bg[SELECTED]	   = "#343736"
+ bg[ACTIVE]        = "#F5F5F5"
+ bg[INSENSITIVE]   = "#EFEFEF"
+
+ base[NORMAL]      = "#FFFFFF"
+ base[PRELIGHT]    = "#595F5D"
+ base[SELECTED]    = "#343736"
+ base[ACTIVE]      = "#4D5150"
+ base[INSENSITIVE] = "#E8E8E8"
+
+ text[NORMAL]      = "#505050"
+ text[PRELIGHT]    = "#505050"
+ text[SELECTED]    = "#FFFFFF"
+ text[ACTIVE]      = "#FFFFFF"
+ text[INSENSITIVE] = "#B5B5B5"
+
+ engine "murrine"
+ {
+  animation            = FALSE
+  rgba		       = FALSE
+  gradient_shades      = {1.03,1.0,1.0,0.985}
+  contrast	       = .55
+  scrollbarstyle       = 2 # 0 to get rid of the handles. (2 default)
+  sliderstyle          = 0
+  stepperstyle         = 1
+  glazestyle           = 0
+  reliefstyle	       = 2
+  toolbarstyle	       = 2
+  progressbarstyle     = 0 # 1 to add stripes. (0 default)
+  roundness            = 0
+  highlight_shade      = 1.00
+  lightborder_shade    = 1.85
+  lightborderstyle     = 1
+  menuitemstyle        = 0 # 1 if you want borders around menu items. (0 default)
+  menubarstyle         = 2 # 3 if you want stripes. (2 default)
+  menubaritemstyle     = 0
+  listviewstyle        = 1 # 0 to turn off the dots. (1 default)
+  listviewheaderstyle  = 1
+ }
+}
+
+style "theme-button" = "theme-default"
+{
+ bg[NORMAL]	 = "#E6E6E6"
+ bg[PRELIGHT]	 = "#E6E6E6"
+ bg[ACTIVE]      = "#E6E6E6"
+ bg[SELECTED]    = "#E6E6E6"
+ bg[INSENSITIVE] = "#E6E6E6"
+}
+
+style "theme-menu" = "theme-default"
+{
+ xthickness = 2
+ ythickness = 1
+}
+
+style "theme-menu-item" = "theme-default"
+{
+ ythickness 	= 3
+ fg[NORMAL] 	= "#505050"
+ fg[PRELIGHT]   = "#FFFFFF"
+ text[PRELIGHT] = "#FFFFFF"
+}
+
+style "theme-menubar" = "theme-default"
+{
+ bg[NORMAL] = "#505050"
+ fg[NORMAL] = "#FFFFFF"
+}
+
+style "theme-menubar-item" = "theme-default"
+{
+ ythickness   = 4
+ fg[NORMAL]   = "#FFFFFF"
+ fg[PRELIGHT] = "#FFFFFF"
+}
+
+style "theme-progressbar" = "theme-default"
+{
+ xthickness = 0
+ ythickness = 0
+ bg[SELECTED] = "#505050"
+ fg[PRELIGHT] = "#FFFFFF"
+}
+
+style "theme-scrollbar"
+{
+ bg[SELECTED] = "#E6E6E6"
+ GtkRange ::trough-border = 3
+ engine "murrine" {
+  highlight_shade = 1.03
+ }
+}
+
+class "GtkWidget"      style "theme-default"
+class "GtkButton"      style "theme-button"
+class "GtkScale"       style "theme-button"
+class "GtkCombo"       style "theme-button"
+class "GtkNotebook"    style "theme-button"
+class "GtkMenu"        style "theme-menu"
+class "GtkMenuItem"    style "theme-menu-item"
+class "GtkProgressBar" style "theme-progressbar"
+class "GtkScrollbar"   style "theme-scrollbar"
+class "*MenuBar*"      style "theme-menubar"
+
+widget_class "*MenuItem.*" style "theme-menu-item"
+widget_class "*MenuBar.*"  style "theme-menubar-item"
